@@ -116,8 +116,10 @@ app.post('/api/message', async (req, res) => {
           },
           { role: 'user', content: lastUserMessage.content },
         ],
-        max_tokens: 10,
-        reasoning: { enabled: false },
+        max_tokens: 10, // Limit tokens for classification
+        stream: false,
+        temperature: 0, // Use a low temperature for deterministic classification
+        reasoning: { enabled: false },  // Disable reasoning for classification
       }),
     });
 
