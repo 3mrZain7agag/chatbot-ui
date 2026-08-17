@@ -91,5 +91,5 @@ Runs on `http://localhost:5173` (or the port Vite assigns)
 ## Notes on free-tier limits
 
 - Chat responses are capped at 150 completion tokens to conserve free quota
-- Only the last 3 messages of conversation history are sent per request
+- Only the last 6 messages of conversation history are sent per request
 - Model "reasoning" output is disabled (`reasoning: { enabled: false }`) to keep responses concise and avoid wasting tokens on visible chain-of-thought
