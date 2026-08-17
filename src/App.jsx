@@ -18,7 +18,10 @@ function App() {
     setLoading(true)
 
     try {
-      const response = await fetch('https://legendary-tribble-wr7r76p4g4rxf569r-3001.app.github.dev/api/message', {
+      const codespaceName = import.meta.env.VITE_CODESPACE_NAME
+      const apiBase = codespaceName ? `https://${codespaceName}-3001.app.github.dev` : 'http://localhost:3001'
+      const response = await fetch(`${apiBase}/api/message`,
+      {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
